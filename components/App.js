@@ -20,7 +20,7 @@ App = React.createClass({
 		})
 		.catch(error => console.log('Error', error));
 	},
-	getGif: function(searchingText, callback) {
+	getGif: function(searchingText) {
 		var GIPHY_API_URL = 'https://api.giphy.com';
     	var GIPHY_PUB_KEY = 'dc6zaTOxFJmzC';
 		var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
