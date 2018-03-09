@@ -1,0 +1,35 @@
+{
+  "name": "zadanie_14_8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "npm run init:dirs && npm run init:files",
+    "init:dirs": "mkdir js css sass components",
+    "init:files": "touch index.html README.md js/script.js sass/styles.scss css/styles.css components/App.js components/Gif.js components/Search.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/styles.css",
+    "watch:sassprefixer": "onchange sass/*.scss -- parallelshell \"npm run build:sass\" \"npm run build:autoprefixer\" ",
+    "start:server": "http-server",
+    "start": "babel script.js --watch --out-file script-compiled.js",
+    "test:js": "globstar jshint components"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "babel-polyfill": "^6.26.0",
+    "globstar": "^1.0.0",
+    "http-server": "^0.11.1",
+    "jshint": "^2.9.5",
+    "node-sass": "^4.7.2",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2"
+  },
+  "dependencies": {
+    "babel-standalone": "^6.26.0"
+  }
+}
