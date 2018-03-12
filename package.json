@@ -6,7 +6,7 @@
   "scripts": {
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
     "start:server": "http-server",
-    "start": "babel script.js --watch --out-file script-compiled.js",
+    "start": "babel js/script.js --watch --out-file js/script-compiled.js",
     "test:js": "jshint components"
   },
   "keywords": [],
